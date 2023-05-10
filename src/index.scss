@@ -1,17 +1,81 @@
 .ooo-linkview {
+    background-color: var(--stage-background-color);
+
     path.link {
-        stroke: black;
-        stroke-width: 1px;
+        stroke: var(--link-stroke);
+        stroke-width: var(--link-stroke-width);
         fill: none;
     }
 
-    .ooo-group {
-        .left {
-            width: 20px;
-        }
+    >svg {
+        margin: 20px;
+    }
 
-        .right {
-            width: 20px;
+    .ooo-group {
+        height: var(--group-max-height);
+
+        >div {
+            max-height: var(--group-max-height);
+            overflow-y: auto;
+            overflow-x: visible;
+            width: 100%;
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+
+                td {
+                    border: var(--group-table-border);
+                    padding: 0px;
+
+                    div {
+                        width: 100%;
+                        height: var(--item-height);
+                        margin: 0px;
+                    }
+
+                    .left {
+                        min-width: var(--item-side-min-width);
+                    }
+
+                    .right {
+                        min-width: var(--item-side-min-width);
+                    }
+                }
+
+                >thead {
+                    position: -webkit-sticky;
+                    position: sticky;
+                    top: 0;
+                    z-index: 1;
+                }
+
+                >thead>tr>td {
+                    background-color: var(--item-header-background-color);
+                    color: var(--item-header-font-color);
+                    font: 18px bold;
+                }
+
+                >tbody>tr:nth-child(odd)>td {
+                    background-color: var(--item-body-background-color-odd);
+                    color: var(--item-body-font-color-odd);
+                }
+
+                >tbody>tr:nth-child(even)>td {
+                    background-color: var(--item-body-background-color-even);
+                    color: var(--item-body-font-color-even);
+                }
+            }
         }
+    }
+}
+
+.ooo-linkview>svg.highlight {
+    tbody tr:not(.active) {
+        opacity: 0.2;
+    }
+
+    path.link:not(.active) {
+        opacity: 0.2;
     }
 }

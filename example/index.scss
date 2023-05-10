@@ -1,17 +1,19 @@
 .ooo-linkview {
-    path.link {
-        stroke: black;
-        stroke-width: 1px;
-        fill: none;
-    }
+    --stage-background-color: #AAF;
+    --group-max-height: 200px;
+    --group-table-border: 1px solid white;
+    --item-header-background-color: #008;
+    --item-header-font-color: white;
+    --item-body-background-color-odd: #88F;
+    --item-body-font-color-odd: #444;
+    --item-body-background-color-even: #CCF;
+    --item-body-font-color-even: #444;
+    --item-height: 25px;
+    --link-stroke: black;
+    --link-stroke-width: 1px;
+}
 
-    .ooo-group {
-        .left {
-            width: 20px;
-        }
-
-        .right {
-            width: 20px;
-        }
-    }
+.top {
+    border: solid black 1px;
+    box-sizing: border-box;
 }

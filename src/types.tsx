@@ -40,8 +40,21 @@ export type StyleGroupEx = {
 
 export type StyleCommon = {
     groupMarginWidth: number,
-    showHeader: boolean
+    sideWidth?: number,
+    maxHeight?: number
 }
 
 export type StyleLinkEx = {}
 
+export type EventLinkView = {
+    onClickLeft?: (groupId: string, itemId: string) => void;
+    onClickRight?: (groupId: string, itemId: string) => void;
+    onClickBody?: (groupId: string, itemId: string) => void;
+}
+
+export type EventGroup = {
+    onScroll: () => void;
+    onClickLeft: (itemId: string) => void;
+    onClickRight: (itemId: string) => void;
+    onClickBody: (itemId: string) => void;
+}
