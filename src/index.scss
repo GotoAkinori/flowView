@@ -1,5 +1,21 @@
 .ooo-linkview {
+    /* ======= Variables ======= */
+    --stage-background-color: #AAF;
+    --group-max-height: 100%;
+    --group-table-border: 1px solid white;
+    --item-header-background-color: #008;
+    --item-header-font-color: white;
+    --item-body-background-color-odd: #88F;
+    --item-body-font-color-odd: #444;
+    --item-body-background-color-even: #CCF;
+    --item-body-font-color-even: #444;
+    --item-height: 25px;
+    --link-stroke: black;
+    --link-stroke-width: 1px;
+    /* ========================= */
+
     background-color: var(--stage-background-color);
+    overflow: auto;
 
     path.link {
         stroke: var(--link-stroke);
@@ -33,7 +49,6 @@
                     padding: 0px;
 
                     div {
-                        width: 100%;
                         height: var(--item-height);
                         margin: 0px;
                     }

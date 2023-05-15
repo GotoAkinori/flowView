@@ -43,7 +43,6 @@ export type StyleGroupEx = {
 export type StyleCommon = {
   groupMarginWidth: number;
   sideWidth?: number;
-  maxHeight?: number;
 };
 
 export type StyleLinkEx = {};

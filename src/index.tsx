@@ -29,11 +29,13 @@ export class LinkView extends React.Component<{
   }
 
   componentDidMount() {
-    this.links.forEach(v => v.current?.updateLinks());
-    this.svg.current!.style.width =
-      this.groups[this.groups.length - 1].current!.getRight() + 'px';
-    this.svg.current!.style.height =
-      Math.max(...this.groups.map(v => v.current!.getGroupHeight())) + 'px';
+    setTimeout(() => {
+      this.links.forEach(v => v.current?.updateLinks());
+      this.svg.current!.style.width =
+        this.groups[this.groups.length - 1].current!.getRight() + 'px';
+      this.svg.current!.style.height =
+        Math.max(...this.groups.map(v => v.current!.getDivHeight())) + 'px';
+    }, 1);
   }
 
   updateLinks(id: string) {
@@ -565,6 +567,15 @@ class LinkViewGroup extends React.Component<{
   getGroupHeight(): number {
     if (this.foreignObject.current) {
       let rect = this.foreignObject.current.getBoundingClientRect();
+      return rect.height;
+    } else {
+      return NaN;
+    }
+  }
+
+  getDivHeight(): number {
+    if (this.scrollDiv.current) {
+      let rect = this.scrollDiv.current.getBoundingClientRect();
       return rect.height;
     } else {
       return NaN;

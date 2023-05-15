@@ -1,0 +1,19 @@
+{
+    "common": {
+        "groupMarginWidth": 100
+    },
+    "group": [
+        {
+            "groupWidth": 200,
+            "headerCaption": "1"
+        },
+        {
+            "groupWidth": 200,
+            "headerCaption": "2"
+        },
+        {
+            "groupWidth": 300,
+            "headerCaption": "3"
+        }
+    ]
+}
