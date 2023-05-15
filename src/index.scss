@@ -7,6 +7,10 @@
         fill: none;
     }
 
+    path.link.child {
+        stroke-dasharray: 10px;
+    }
+
     >svg {
         margin: 20px;
     }
@@ -64,6 +68,29 @@
                 >tbody>tr:nth-child(even)>td {
                     background-color: var(--item-body-background-color-even);
                     color: var(--item-body-font-color-even);
+                }
+
+                >tbody>tr>td>div {
+                    padding-left: calc(var(--item-level) * 10px);
+                    display: inline-block;
+                    height: 20px;
+
+                    >button {
+                        background-color: transparent;
+                        border: none;
+                    }
+
+                    >button.open:before {
+                        content: url(./icon/open.svg);
+                    }
+
+                    >button.closed:before {
+                        content: url(./icon/closed.svg);
+                    }
+
+                    >button.none:before {
+                        content: url(./icon/none.svg);
+                    }
                 }
             }
         }
